@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ToDoList.Models.Task>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASP.NET MVC C# Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/todolist")
+</head>
+<body>
+<main>
+    <div class="todo-list">
+
+        <h2>@ViewBag.Title</h2>
+        @using (Html.BeginForm("Create", "Home"))
+        {
+            @Html.AntiForgeryToken()
+            
+            <div class="form-actions no-color add-task">
+                <input type="text" name="taskinfo" id="taskinfo" placeholder="Enter a new task" pattern="[a-zA-Z0-9 ]+" class="new-task" maxlength="45" required />
+                <input type="submit" value="Add Task" title="Click to add new task" class="btn btn-success" /> 
+            </div>
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+
+                    var url = Url.Action("Complete", "Home", new { id = item.Id }, null);
+                    var check = item.Complete.ToString();
+
+                    <li class="list-group-item">@Html.CheckBox("mycheckbox", item.Complete, new { onclick = "window.location = '" + url + "'", title="Click to toggle completed status" }) 
+                        <span class="@item.Complete.ToString()">@item.TaskInfo</span> @Html.ActionLink("Remove", "Remove", new { id = item.Id }, 
+                                                                                     new { @class = "btn btn-danger pull-right", @title = "Click to remove task", @data_taskinfo = item.TaskInfo}) 
+                    </li>                   
+                }
+            </ul>
+        }
+    </div>
+</main>
+</body>
+</html>
+

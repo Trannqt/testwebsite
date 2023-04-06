@@ -1,0 +1,90 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+input[type="checkbox"] {
+        cursor:pointer;
+}
+
+main {
+    padding:0;
+}
+.todo-list {
+    width:500px;
+    background-color:#c0c0c0;
+    border:1px solid #c0c0c0;
+    border-radius:3px;
+    box-shadow:1px 1px 15px #c0c0c0;
+    margin:0px auto 0px auto;
+    padding:10px 10px 0px 10px;
+}
+
+.add-task {
+    border:1px solid #fff;
+    border-radius:3px;
+    padding:10px;
+}
+
+.todo-list h2 {
+    margin:0 0 10px 0;
+    text-align:center;
+    color:#fff;
+}
+
+.btn-success {
+    height:33px;
+}
+
+.btn-danger {
+    height:33px;
+    margin-top:-5px;
+}
+
+input.new-task {
+    max-width:360px;
+    width:365px;
+    max-height:33px;
+    min-width:365px;
+    min-height:33px;
+    padding:0 5px;
+}
+
+span.True {
+    text-decoration:line-through;
+}
+
+ul.list-group {
+    margin-top:10px;
+    margin-bottom:10px;
+    padding:0;
+}
+
+li:hover {
+    background-color:#b0b0b0;
+    color:#ffffff;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    padding:.3em .5em .3em .8em;        
+}
